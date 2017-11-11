@@ -93,14 +93,14 @@ function fncGetPurchaseList(currentPage) {
 		<td></td>
 		<td align="left"><%=purchase.getReceiverPhone()%></td>
 		<td></td>
-		<td align="left">
+		<td align="left"> 현재
 			<% if (purchase.getTranCode().trim().equals("0")) {%>
 				구매완료
 			<%} else if (purchase.getTranCode().trim().equals("1")) {%>
 				배송중
 			<%} else if (purchase.getTranCode().trim().equals("2")) {%>
 				배송완료
-			<%} %>
+			<%} %> 상태 입니다.
 		</td>
 		<td></td>
 		<td align="left">

@@ -1,4 +1,6 @@
 <%@ page contentType="text/html; charset=euc-kr" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
 <%@ page import="com.model2.mvc.service.domain.Purchase" %>
 <%@ page import="com.model2.mvc.service.domain.User" %>
 <%
