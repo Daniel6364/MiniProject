@@ -16,17 +16,18 @@ public class UpdateProductAction extends Action {
 	public String execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
 	
 		System.out.println("UpdateProductAction.java ½ÇÇàµÊ");
-		String productNo = (String) request.getParameter("prodNo");
 		
-		Product product = new Product();
-		product.setProdNo(Integer.parseInt(productNo));
+		String prodNo = request.getParameter("prodNo");
+		
+		ProductService service = new ProductServiceImpl();
+		Product product = service.getProduct(Integer.parseInt(prodNo));
+		
 		product.setProdName(request.getParameter("prodName"));
 		product.setProdDetail(request.getParameter("prodDetail"));
 		product.setManuDate(request.getParameter("manuDate").replace("-", ""));
 		product.setPrice(Integer.parseInt(request.getParameter("price")));
 		product.setFileName(request.getParameter("fileName"));
-
-		ProductService service = new ProductServiceImpl();
+		
 		service.updateProduct(product);
 		request.setAttribute("product", product);
 		

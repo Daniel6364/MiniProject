@@ -47,7 +47,8 @@ public class ProductDAO {
 
 		String sql = "SELECT "
 				+ "prod_no, prod_name, prod_detail, manufacture_day, price, image_file, reg_date "
-				+ "FROM product WHERE prod_no = ?";
+				+ "FROM product "
+				+ "WHERE prod_no = ?";
 		
 		PreparedStatement pStmt = con.prepareStatement(sql);
 		pStmt.setInt(1, productNo);
@@ -153,7 +154,8 @@ public class ProductDAO {
 		Connection con = DBUtil.getConnection();
 
 		String sql = "UPDATE product "
-					+ "SET prod_name=?, prod_detail=?, manufacture_day=?, price=?, image_file=? "
+					+ "SET prod_name=?, prod_detail=?, manufacture_day=?, "
+					+ "price=?, image_file=? "
 					+ "WHERE prod_no=?";
 		
 		PreparedStatement pStmt = con.prepareStatement(sql);

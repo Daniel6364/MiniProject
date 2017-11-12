@@ -16,11 +16,9 @@ public class UpdateProductViewAction extends Action {
 		System.out.println("[UpdateProductViewAction.java Start]");
 		
 		String prodNo = request.getParameter("prodNo");
-		System.out.println("[prodNo] : " + prodNo);
 		
 		ProductService service = new ProductServiceImpl();
 		Product product = service.getProduct(Integer.parseInt(prodNo));
-		System.out.println("[product] : " + product);
 		
 		request.setAttribute("product", product);
 		return "forward:/product/updateProductView.jsp";
