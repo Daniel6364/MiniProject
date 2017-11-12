@@ -116,13 +116,17 @@ function fncGetList(currentPage) {
 		</td>
 	</tr>
 	<tr>
+		<td colspan="1"><a href = "listProduct.do?priceCondition=lowPrice">낮은가격순 ▼</a></td>
+		<td colspan="2"><a href = "listProduct.do?priceCondition=highPrice">높은가격순 ▲</a></td>
+	</tr>
+	<tr>
 		<td class="ct_list_b" width="100">No</td>
 		<td class="ct_line02"></td>
 		<td class="ct_list_b" width="150">상품명</td>
 		<td class="ct_line02"></td>
 		<td class="ct_list_b" width="150">가격</td>
 		<td class="ct_line02"></td>
-		<td class="ct_list_b">등록일</td>	
+		<td class="ct_list_b">상품 상세정보</td>	
 		<td class="ct_line02"></td>
 		<td class="ct_list_b">현재상태</td>	
 	</tr>
@@ -161,21 +165,14 @@ function fncGetList(currentPage) {
 			<td align="center">${ i }</td>
 			<td></td>
 			<td align="left">
-			<c:if test = "${ product.proTranCode != null }">
-				<a>${ product.prodName }</a>
-			</c:if>
-			<c:if test = "${ product.proTranCode == null }">
-				<a href="/getProduct.do?prodNo=${ product.prodNo }
-					&menu=${ requestScope.menu }">${ product.prodName }</a>
-			</c:if>
+				<a href="/getProduct.do?prodNo=${ product.prodNo }&menu=${ requestScope.menu }">${ product.prodName }</a>
 			</td>
 			<td></td>
 			<td align="left">${ product.price }</td>
 			<td></td>
-			<td align="left">${ product.regDate }</td>
+			<td align="left">${ product.prodDetail }</td>
 			<td></td>
 			<td align="left">
-			
 				<c:if test = "${ requestScope.menu == 'search' }">
 					<c:if test = "${ product.proTranCode == null }">판매중</c:if> 
 					<c:if test = "${ product.proTranCode != null }">재고 없음</c:if>
@@ -187,7 +184,6 @@ function fncGetList(currentPage) {
 					<c:if test = "${ product.proTranCode == '1  ' }">배송중</c:if>
 					<c:if test = "${ product.proTranCode == '2  ' }">배송완료</c:if>
 				</c:if>
-				
 			</td>
 		</tr>
 		<tr>

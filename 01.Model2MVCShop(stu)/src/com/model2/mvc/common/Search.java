@@ -8,6 +8,7 @@ public class Search {
 	private String searchCondition;
 	private String searchKeyword;
 	private int pageSize;
+	private String searchPrice;
 	
 	///Constructor
 	public Search() {
@@ -45,6 +46,17 @@ public class Search {
 	public String toString() {
 		return "Search [curruntPage=" + curruntPage + ", searchCondition="
 				+ searchCondition + ", searchKeyword=" + searchKeyword
-				+ ", pageSize=" + pageSize + "]";
+				+ ", pageSize=" + pageSize + ", searchPrice=" + searchPrice + "]";
 	}
+
+	public String getSearchPrice() {
+		return searchPrice;
+	}
+
+	public void setSearchPrice(String searchPrice) {
+		this.searchPrice = searchPrice;
+	}
+
+	
+	
 }
