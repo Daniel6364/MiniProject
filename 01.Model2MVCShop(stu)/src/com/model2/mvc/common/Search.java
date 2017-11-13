@@ -56,7 +56,4 @@ public class Search {
 	public void setSearchPrice(String searchPrice) {
 		this.searchPrice = searchPrice;
 	}
-
-	
-	
 }

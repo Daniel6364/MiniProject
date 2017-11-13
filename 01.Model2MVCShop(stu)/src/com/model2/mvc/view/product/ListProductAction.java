@@ -32,6 +32,7 @@ public class ListProductAction extends Action {
 		search.setSearchKeyword(request.getParameter("searchKeyword"));
 		
 		// priceSearchCondition addition
+		System.out.println("[input priceCondition value] : " + request.getParameter("priceCondition"));
 		search.setSearchPrice(request.getParameter("priceCondition"));
 		
 		int pageSize = Integer.parseInt(getServletContext().getInitParameter("pageSize"));

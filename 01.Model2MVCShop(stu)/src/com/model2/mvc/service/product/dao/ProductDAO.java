@@ -100,8 +100,6 @@ public class ProductDAO {
 			}
 		}
 		
-//		sql += " ORDER BY 1";
-		
 		if (search.getSearchPrice() != null) {
 			if (search.getSearchPrice().equals("lowPrice")) {
 				sql += " ORDER BY p.price ASC";
@@ -119,7 +117,6 @@ public class ProductDAO {
 		PreparedStatement pStmt = con.prepareStatement(sql);
 		ResultSet rs = pStmt.executeQuery();
  
-		
 		List<Product> list = new ArrayList<Product>();
 		
 		while(rs.next()) {
@@ -133,13 +130,7 @@ public class ProductDAO {
 			product.setRegDate(rs.getDate("reg_date"));
 			product.setProTranCode(rs.getString("tran_status_code"));
 			
-
-//			Purchase purchase = new Purchase();
-//			purchase.setTranCode(rs.getString("tran_status_code"));
-//			
 			list.add(product);
-//			map.put("purchase", purchase);
-//			System.out.println("[ProductDAO : TranCode value] : " + map.get("purchase"));
 		}
 
 		map.put("totalCount", new Integer(totalCount));
@@ -147,7 +138,6 @@ public class ProductDAO {
 
 		map.put("list", list);
 		System.out.println("4.[List value contained currentPage in ProductDAO.java] : " + map.get("list"));
-
 
 		rs.close();
 		pStmt.close();
