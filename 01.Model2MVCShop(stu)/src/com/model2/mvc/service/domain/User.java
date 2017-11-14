@@ -18,6 +18,19 @@ public class User {
 	public User(){
 	}
 	
+	public User(String userId, String userName, 
+			String password, String role, String ssn, 
+			String phone, String addr, String email) {
+		this.userId = userId;
+		this.userName = userName;
+		this.password = password;
+		this.role = role;
+		this.ssn = ssn;
+		this.phone = phone;
+		this.addr = addr;
+		this.email = email;
+	}
+	
 	public String getUserId() {
 		return userId;
 	}

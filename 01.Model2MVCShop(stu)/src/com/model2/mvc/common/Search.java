@@ -1,5 +1,6 @@
 package com.model2.mvc.common;
 
+import java.util.ArrayList;
 
 public class Search {
 	
@@ -9,6 +10,10 @@ public class Search {
 	private String searchKeyword;
 	private int pageSize;
 	private String searchPrice;
+	
+	// Add Field for mybatis practice
+	private String[] userName;
+	private ArrayList<String> userId;
 	
 	///Constructor
 	public Search() {
@@ -49,6 +54,7 @@ public class Search {
 				+ ", pageSize=" + pageSize + ", searchPrice=" + searchPrice + "]";
 	}
 
+	// add for price search
 	public String getSearchPrice() {
 		return searchPrice;
 	}
@@ -56,4 +62,29 @@ public class Search {
 	public void setSearchPrice(String searchPrice) {
 		this.searchPrice = searchPrice;
 	}
+
+	// add for mybatis practice
+	public String[] getUserName() {
+		return userName;
+	}
+
+	public void setUserName(String[] userName) {
+		this.userName = userName;
+	}
+
+	public ArrayList<String> getUserId() {
+		return userId;
+	}
+
+	public void setUserId(ArrayList<String> userId) {
+		this.userId = userId;
+	}
+	
+	
+	
+	
+	
+	
+	
+	
 }

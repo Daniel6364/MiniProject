@@ -4,6 +4,7 @@ import java.util.ArrayList;
 
 import org.apache.ibatis.session.SqlSession;
 
+import com.model2.mvc.common.Search;
 import com.model2.mvc.common.UserSearch;
 import com.model2.mvc.service.domain.User;
 
@@ -20,21 +21,20 @@ public class MyBatisTestApp10 {
 		SqlSession sqlSession = SqlSessionFactoryBean.getSqlSession();
 		System.out.println("\n");
 		
-		//==> Test 용 User instance 생성  
-		User user = new User("user04","주몽","user04",null,0);
-		User user = new User("bit01","이덕화","1111", "780501-95486245", "");
+		User user = new User("bit01","하정우","1111", "user", null, "01048572883", "서울시 강남구", "bit01@daum.net");
 		
-		//1. UserMapper10.addUser Test  :: users table age/grade/redDate 입력값 확인할것 : OK 
+		
+		//1. UserMapper.addUser Test  :: users table age/grade/redDate 입력값 확인할것 : OK 
 		System.out.println(":: 1. addUser(INSERT)  ? ");
-		System.out.println(":: "+ sqlSession.insert("UserMapper10.addUser",user));
+		System.out.println(":: "+ sqlSession.insert("UserMapper.addUser",user));
 		System.out.println("\n");
 		
-		//2. UserMapper10.getUser Test :: 주몽 inert 확인 
+		//2. UserMapper.getUser Test :: 주몽 inert 확인 
 		System.out.println(":: 2. getUser(SELECT)  ? ");
-		System.out.println(":: "+sqlSession.selectOne("UserMapper10.getUser",user.getUserId()) );
+		System.out.println(":: "+sqlSession.selectOne("UserMapper.getUser",user.getUserId()) );
 		System.out.println("\n");
-		
-		//3. UserMapper10.uadateUser Test  :: users table age/grade/redDate 입력값 확인할것 : OK
+/*		
+		//3. UserMapper.uadateUser Test  :: users table age/grade/redDate 입력값 확인할것 : OK
 		//                                                    :: 주몽 ==> 온달 수정
 		user.setUserName("온달");
 		user.setGrade(777);
@@ -54,6 +54,8 @@ public class MyBatisTestApp10 {
 		System.out.println("\n");
 		System.out.println("/////////////////////////////////////////////////////////////////////////////////////////////////");
 		System.out.println("\n");
+	
+		
 		
 		//==> Test 용 Search instance 생성 
 		Search search = new Search();
@@ -77,7 +79,7 @@ public class MyBatisTestApp10 {
 		
 		System.out.println(":: 3. getUserList01(SELECT)  ? ");
 		SqlSessionFactoryBean.printList( sqlSession.selectList("UserMapper10.getUserList",search) );
-
+*/
 		//END::SqlSession  close
 		System.out.println("::END::SqlSession 닫기..");
 		sqlSession.close();

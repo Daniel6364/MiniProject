@@ -19,14 +19,15 @@
 		<result property="regDate" column="reg_date" jdbcType="DATE" />
 	</resultMap>
 
-	<insert id="insertUser" parameterType="com.model2.mvc.service.User">
+	<insert id="addtUser" parameterType="com.model2.mvc.service.User">
 		INSERT
-		INTO users( user_id, user_name, password, role, ssn, cell_phone, addr, email, reg_date)
+		INTO users( user_id, user_name, password, role, 
+					ssn, cell_phone, addr, email, reg_date)
 		VALUES ( #{userId},	#{userName}, #{password}, 'user', 
 				 #{ssn}, #{cellPhone}, #{addr}, #{email}, #{regDate:DATE})
 	</insert>
 
-	<select id="findUser" parameterType="string" resultMap="userSelectMap">
+	<select id="getUser" parameterType="string" resultMap="userSelectMap">
 		SELECT
 		user_id, user_name, password, role, ssn, cell_phone, addr, email, reg_date
 		FROM users
