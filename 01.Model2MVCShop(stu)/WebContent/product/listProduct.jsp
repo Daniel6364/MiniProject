@@ -12,9 +12,10 @@
 //검색 / page 두가지 경우 모두 Form 전송을 위해 JavaScrpt 이용  
 function fncGetList(currentPage) {
 	document.getElementById("currentPage").value = currentPage;
+	document.getElementById("highPriceSearch").value = null;
    	document.detailForm.submit();		
  }
-
+ 
 </script>
 </head>
 <body bgcolor="#ffffff" text="#000000">
@@ -83,13 +84,11 @@ function fncGetList(currentPage) {
 	</tr>
 	<tr>
 		
-		<td colspan="1">
-			<input type="hidden" name="priceCondition" value="lowPrice"/>
+		<td colspan="4">
+			<input type="hidden" id="lowPriceSearch" name="priceCondition" value="${'lowPrice'}"/>
 				<a href = "javascript:fncGetList('1')">[낮은가격순 ▼] </a>
-		</td>
 	
-		<td colspan="3">
-			<input type="hidden" name="priceCondition" value="highPrice"/>
+			<input type="hidden" id="highPriceSearch" name="priceCondition" value="highPrice"/>
 				<a href = "javascript:fncGetList('1')">[높은가격순 ▲] </a>
 		</td>
 	</tr>
