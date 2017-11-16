@@ -195,11 +195,13 @@ public class ProductDAO {
 		
 		// 게시판 currentPage Row 만  return 
 		private String makeCurrentPageSql(String sql , Search search){
-			sql = 	"SELECT * "+ 
-						"FROM (		SELECT inner_table. * ,  ROWNUM AS row_seq " +
-										" 	FROM (	"+sql+" ) inner_table "+
-										"	WHERE ROWNUM <="+search.getCurrentPage()*search.getPageSize()+" ) " +
-						"WHERE row_seq BETWEEN "+((search.getCurrentPage()-1)*search.getPageSize()+1) +" AND "+search.getCurrentPage()*search.getPageSize();
+			sql = 	"SELECT *"
+				  + " FROM ( SELECT inner_table. * ,  ROWNUM AS row_seq" 
+  				  + " FROM ( " + sql + " ) inner_table"
+				  + " WHERE ROWNUM <=" + search.getCurrentPage() * search.getPageSize() + " ) " 
+				  + " WHERE row_seq BETWEEN "
+				  + ((search.getCurrentPage()-1) * search.getPageSize()+1) 
+				  + " AND "+search.getCurrentPage() * search.getPageSize();
 			
 			System.out.println("1.[UserDAO :: make SQL] :: "+ sql);	
 			

@@ -71,4 +71,10 @@ public class Product {
 				+ "[manuDate]" + manuDate+ "[price]" + price + "[prodDetail]" + prodDetail
 				+ "[prodName]" + prodName + "[prodNo]" + prodNo;
 	}	
+	
+	
+	
+	
+	
+	
 }

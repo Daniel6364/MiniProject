@@ -1,5 +1,6 @@
 package com.model2.mvc.common;
 
+import java.util.ArrayList;
 
 public class Search {
 	
@@ -9,6 +10,10 @@ public class Search {
 	private String searchKeyword;
 	private int pageSize;
 	private String searchPrice;
+	
+	// for the ProductMapper10
+	private String[] prodName;
+	private ArrayList<String> prodNo;
 	
 	///Constructor
 	public Search() {
@@ -56,4 +61,26 @@ public class Search {
 	public void setSearchPrice(String searchPrice) {
 		this.searchPrice = searchPrice;
 	}
+
+	// for the ProductMapper10
+	public String[] getProdName() {
+		return prodName;
+	}
+
+	public void setProdName(String[] prodName) {
+		this.prodName = prodName;
+	}
+
+	public ArrayList<String> getProdNo() {
+		return prodNo;
+	}
+
+	public void setProdNo(ArrayList<String> prodNo) {
+		this.prodNo = prodNo;
+	}
+
+
+	
+	
+	
 }
