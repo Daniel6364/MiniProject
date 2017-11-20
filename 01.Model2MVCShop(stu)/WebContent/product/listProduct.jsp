@@ -12,9 +12,21 @@
 //검색 / page 두가지 경우 모두 Form 전송을 위해 JavaScrpt 이용  
 function fncGetList(currentPage) {
 	document.getElementById("currentPage").value = currentPage;
-   	document.detailForm.submit();		
- }
+   	document.detailForm.submit();
+}
 
+function fncLowPrice(currentPage) {
+	document.getElementById("currentPage").value = currentPage;
+	document.getElementById("lowPriceSearch").value = 'lowPrice';
+   	document.detailForm.submit();		
+}
+ 
+function fncHighPrice(currentPage) {
+	document.getElementById("currentPage").value = currentPage;
+	document.getElementById("highPriceSearch").value = 'highPrice';
+   	document.detailForm.submit();		
+}
+ 
 </script>
 </head>
 <body bgcolor="#ffffff" text="#000000">
@@ -83,14 +95,12 @@ function fncGetList(currentPage) {
 	</tr>
 	<tr>
 		
-		<td colspan="1">
-			<input type="hidden" name="priceCondition" value="lowPrice"/>
-				<a href = "javascript:fncGetList('1')">[낮은가격순 ▼] </a>
-		</td>
+		<td colspan="4">
+			<input type="hidden" id="lowPriceSearch" name="priceCondition" value=""/>
+				<a href = "javascript:fncLowPrice('1')">[낮은가격순 ▼] </a>
 	
-		<td colspan="3">
-			<input type="hidden" name="priceCondition" value="highPrice"/>
-				<a href = "javascript:fncGetList('1')">[높은가격순 ▲] </a>
+			<input type="hidden" id="highPriceSearch" name="priceCondition" value=""/>
+				<a href = "javascript:fncHighPrice('1')">[높은가격순 ▲] </a>
 		</td>
 	</tr>
 	<tr>

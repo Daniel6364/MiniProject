@@ -18,7 +18,6 @@ public class ListProductAction extends Action {
 		
 		System.out.println("[ListProductAction.java Start]");
 	
-		
 		Search search = new Search();
 
 		int currentPage = 1;
