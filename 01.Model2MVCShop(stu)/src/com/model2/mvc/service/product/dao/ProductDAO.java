@@ -92,11 +92,11 @@ public class ProductDAO {
 		
 		if (search.getSearchCondition() != null) {
 			if (search.getSearchCondition().equals("0") && !search.getSearchKeyword().equals("")) {
-				sql += " WHERE prod_no LIKE '%" + search.getSearchKeyword() + "%'";
+				sql += " WHERE p.prod_no LIKE '%" + search.getSearchKeyword() + "%'";
 			} else if (search.getSearchCondition().equals("1") && !search.getSearchKeyword().equals("")) {
-				sql += " WHERE prod_name LIKE '%" + search.getSearchKeyword() + "%'";
+				sql += " WHERE p.prod_name LIKE '%" + search.getSearchKeyword() + "%'";
 			} else if (search.getSearchCondition().equals("2") && !search.getSearchKeyword().equals("")) {
-				sql += " WHERE price LIKE '%" + search.getSearchKeyword() + "%'";
+				sql += " WHERE p.price LIKE '%" + search.getSearchKeyword() + "%'";
 			}
 		}
 		

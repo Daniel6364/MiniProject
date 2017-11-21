@@ -75,7 +75,7 @@ function fncHighPrice(currentPage) {
 						<img src="/images/ct_btnbg01.gif" width="17" height="23">
 					</td>
 					<td background="/images/ct_btnbg02.gif" class="ct_btn01" style="padding-top:3px;">
-						<a href="javascript:fncGetList('1');">검색</a>
+						<a href="javascript:fncGetList('${ search.currentPage }');">검색</a>
 					</td>
 					<td width="14" height="23">
 						<img src="/images/ct_btnbg03.gif" width="14" height="23">
@@ -97,10 +97,10 @@ function fncHighPrice(currentPage) {
 		
 		<td colspan="4">
 			<input type="hidden" id="lowPriceSearch" name="priceCondition" value=""/>
-				<a href = "javascript:fncLowPrice('1')">[낮은가격순 ▼] </a>
+				<a href = "javascript:fncLowPrice('${ search.currentPage }')">[낮은가격순 ▼] </a>
 	
 			<input type="hidden" id="highPriceSearch" name="priceCondition" value=""/>
-				<a href = "javascript:fncHighPrice('1')">[높은가격순 ▲] </a>
+				<a href = "javascript:fncHighPrice('${ search.currentPage }')">[높은가격순 ▲] </a>
 		</td>
 	</tr>
 	<tr>
