@@ -1,5 +1,6 @@
 package com.model2.mvc.view.product;
 
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -17,6 +18,16 @@ public class GetProductAction extends Action {
 		
 		String prodNo = request.getParameter("prodNo");
 		System.out.println("GetProductAction.java : prodNo : " + prodNo);
+		
+		// 최근 본 상품 cookie 추가///////////////////////////////////
+		Cookie cookies = new Cookie("prodNo", prodNo);
+		System.out.println("$$$" + cookies.getValue());
+		
+		cookies.setMaxAge(-1);
+		response.addCookie(cookies);
+		
+		System.out.println("###" + request.getCookies());
+		//////////////////////////////////////////////////////////
 		
 		ProductService service = new ProductServiceImpl();
 		Product product = service.getProduct(Integer.parseInt(prodNo));
