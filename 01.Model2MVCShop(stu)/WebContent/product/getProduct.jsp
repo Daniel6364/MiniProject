@@ -76,6 +76,7 @@
 			<%--=product.getFileName() --%>
 			<img src = "/images/uploadFiles/'${ product.fileName }' "/>
 			<%-- <img src = "/images/uploadFiles/../../images/empty.GIF"/> --%>
+			<img src = "/images/uploadFiles/../../images/empty.GIF"/>
 		</td>
 	</tr>
 	<tr>

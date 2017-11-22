@@ -92,18 +92,18 @@ public class ProductDAO {
 		
 		if (search.getSearchCondition() != null) {
 			if (search.getSearchCondition().equals("0") && !search.getSearchKeyword().equals("")) {
-				sql += " WHERE prod_no LIKE '%" + search.getSearchKeyword() + "%'";
+				sql += " WHERE p.prod_no LIKE '%" + search.getSearchKeyword() + "%'";
 			} else if (search.getSearchCondition().equals("1") && !search.getSearchKeyword().equals("")) {
-				sql += " WHERE prod_name LIKE '%" + search.getSearchKeyword() + "%'";
+				sql += " WHERE p.prod_name LIKE '%" + search.getSearchKeyword() + "%'";
 			} else if (search.getSearchCondition().equals("2") && !search.getSearchKeyword().equals("")) {
-				sql += " WHERE price LIKE '%" + search.getSearchKeyword() + "%'";
+				sql += " WHERE p.price LIKE '%" + search.getSearchKeyword() + "%'";
 			}
 		}
 		
 		if (search.getSearchPrice() != null) {
 			if (search.getSearchPrice().equals("lowPrice")) {
 				sql += " ORDER BY p.price ASC";
-			} else {
+			} else if (search.getSearchPrice().equals("highPrice")) {
 				sql += " ORDER BY p.price DESC";
 			}
 		}		
@@ -171,6 +171,7 @@ public class ProductDAO {
 		con.close();
 		
 	}
+	
 	// 게시판 Page 처리를 위한 전체 Row(totalCount)  return
 		private int getTotalCount(String sql) throws Exception {
 			
