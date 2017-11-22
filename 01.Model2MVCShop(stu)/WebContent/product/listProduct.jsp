@@ -96,10 +96,10 @@ function fncHighPrice(currentPage) {
 	<tr>
 		
 		<td colspan="4">
-			<input type="hidden" id="lowPriceSearch" name="priceCondition" value=""/>
+			<input type="hidden" id="lowPriceSearch" name="priceCondition" />
 				<a href = "javascript:fncLowPrice('${ search.currentPage }')">[낮은가격순 ▼] </a>
 	
-			<input type="hidden" id="highPriceSearch" name="priceCondition" value=""/>
+			<input type="hidden" id="highPriceSearch" name="priceCondition" />
 				<a href = "javascript:fncHighPrice('${ search.currentPage }')">[높은가격순 ▲] </a>
 		</td>
 	</tr>

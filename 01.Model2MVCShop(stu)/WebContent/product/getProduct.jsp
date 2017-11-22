@@ -73,8 +73,7 @@
 		<td bgcolor="D6D6D6" width="1"></td>
 		<td class="ct_write01">
 			${ product.fileName }
-			<%--=product.getFileName() --%>
-			<%-- img src = "/images/uploadFiles/../../images/empty.GIF"/--%>
+			<img src = "/images/uploadFiles/../../images/empty.GIF"/>
 		</td>
 	</tr>
 	<tr>

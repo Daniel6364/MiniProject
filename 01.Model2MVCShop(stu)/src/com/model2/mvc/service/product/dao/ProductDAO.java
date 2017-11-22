@@ -103,7 +103,7 @@ public class ProductDAO {
 		if (search.getSearchPrice() != null) {
 			if (search.getSearchPrice().equals("lowPrice")) {
 				sql += " ORDER BY p.price ASC";
-			} else {
+			} else if (search.getSearchPrice().equals("highPrice")) {
 				sql += " ORDER BY p.price DESC";
 			}
 		}		
@@ -171,6 +171,7 @@ public class ProductDAO {
 		con.close();
 		
 	}
+	
 	// 게시판 Page 처리를 위한 전체 Row(totalCount)  return
 		private int getTotalCount(String sql) throws Exception {
 			
