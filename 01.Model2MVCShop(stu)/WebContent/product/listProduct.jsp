@@ -32,7 +32,7 @@ function fncHighPrice(currentPage) {
 <body bgcolor="#ffffff" text="#000000">
 
 <div style="width:98%; margin-left:10px;">
-		<form name="detailForm" action="/listProduct.do?menu=${ requestScope.menu }" method="post">
+		<form name="detailForm" action="/listProduct.do?menu=${ menu }" method="post">
 		
 <table width="100%" height="37" border="0" cellpadding="0"	cellspacing="0">
 	<tr>
@@ -43,7 +43,7 @@ function fncHighPrice(currentPage) {
 			<table width="100%" border="0" cellspacing="0" cellpadding="0">
 				<tr>
 					<td width="93%" class="ct_ttl01">
-						${ requestScope.menu == 'manage' ? "惑前包府" : "惑前 格废炼雀" }
+						${ menu == 'manage' ? "惑前包府" : "惑前 格废炼雀" }
 					</td>
 				</tr>
 			</table>
